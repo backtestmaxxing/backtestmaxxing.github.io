@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="terminal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>№ 003 · the 200-day moving average of a person — backtestmaxxing</title>
+<meta name="description" content="You are a noisy series. The day-to-day print is mostly bid-ask spread. A memo about which version of yourself is allowed to make decisions.">
+<meta name="theme-color" content="#0b0f0d">
+<meta property="og:title" content="The 200-Day Moving Average of a Person">
+<meta property="og:description" content="You are a noisy series. The day-to-day print is mostly bid-ask spread.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://backtestmaxxing.github.io/writings/moving-average/">
+<link rel="canonical" href="https://backtestmaxxing.github.io/writings/moving-average/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0f0d'/%3E%3Cpath d='M7 22 L14 14 L18 18 L25 9' fill='none' stroke='%2357d98c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='9' r='2.6' fill='%23f2b544'/%3E%3C/svg%3E">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("bm-theme");
+    if (t !== "print" && t !== "terminal") t = "terminal";
+    document.documentElement.dataset.theme = t;
+  } catch (e) { document.documentElement.dataset.theme = "terminal"; }
+})();
+</script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="set">
+      <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
+      <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
+      <span>SHARPE (SLEEP) <b>0.31</b> <b class="down">−0.02</b></span>
+      <span>IDEAS REJECTED <b>1,204</b> <b class="up">+7</b></span>
+      <span>MAX DD 2022 <b class="down">−38.0%</b> <b class="up">RECOVERED</b></span>
+      <span>COFFEE/BTC <b>0.000021</b> FLAT</span>
+      <span>OVERFIT RISK <b class="down">ELEVATED</b></span>
+      <span>SAMPLE SIZE <b>n=1</b></span>
+      <span>α, ADJUSTED <b class="up">0.00***</b></span>
+      <span>CURVES FIT <b>601</b> · UNFIT <b>3</b></span>
+      <span>NEXT ENTRY <b>UNKNOWN</b></span>
+    </span><span class="set">
+      <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
+      <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
+      <span>SHARPE (SLEEP) <b>0.31</b> <b class="down">−0.02</b></span>
+      <span>IDEAS REJECTED <b>1,204</b> <b class="up">+7</b></span>
+      <span>MAX DD 2022 <b class="down">−38.0%</b> <b class="up">RECOVERED</b></span>
+      <span>COFFEE/BTC <b>0.000021</b> FLAT</span>
+      <span>OVERFIT RISK <b class="down">ELEVATED</b></span>
+      <span>SAMPLE SIZE <b>n=1</b></span>
+      <span>α, ADJUSTED <b class="up">0.00***</b></span>
+      <span>CURVES FIT <b>601</b> · UNFIT <b>3</b></span>
+      <span>NEXT ENTRY <b>UNKNOWN</b></span>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap bar">
+    <a class="brand" href="/">backtestmaxxing<span class="cursor" aria-hidden="true"></span></a>
+    <nav class="nav" aria-label="site">
+      <a href="/writings/" aria-current="page">WRITINGS</a>
+      <a href="/projects/">PROJECTS</a>
+      <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
+    </nav>
+    <button class="toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="switch theme" title="switch theme">
+      <span class="dot" aria-hidden="true"></span><span class="lbl">mode: terminal</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="memo-head">
+    <p class="kicker">filing № 003 · research memo</p>
+    <h1>The 200-Day Moving Average of a Person</h1>
+    <div class="memo-meta">
+      <span>FILED <b>2026-09-12</b></span>
+      <span>REV <b>a3f7c1</b></span>
+      <span>CONFIDENCE <b>SPECULATIVE</b></span>
+      <span>RUNTIME <b>4 MIN</b></span>
+      <span>STATUS <b class="up">PUBLISHED, UNREGRETTED</b></span>
+    </div>
+
+    <div class="prose article">
+      <p class="drop">The daily print of a person is almost all spread. You wake up certain the project is dead. By lunch it is obviously the best thing you have ever made. At eleven at night you have drafted both a resignation letter and a shopping list, and neither contains actionable information. Traders met this problem first: a price series is signal plus noise, and the noise is not shy. Their answer was to stop asking what the price is and start asking what it has been, on average, for a while.</p>
+      <p>An identity is a time series too, and it deserves the same courtesy. Take your last two hundred days — what you did, not what you meant to do, the receipts version — and average them. That is the current price of you. The one-day print is a quote from a market that is mostly your own book being marked up and down by mood, weather, and who texted back.</p>
+
+      <table class="tbl">
+        <caption>Table 1 — windows on the self. Short windows are for feeling, long windows are for deciding.</caption>
+        <thead>
+          <tr><th>window</th><th>measures</th><th>turnover</th><th>act on it?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1-day</td><td>mood, sleep debt, inbox</td><td>extreme</td><td>never</td></tr>
+          <tr><td>20-day</td><td>the project of the month</td><td>high</td><td>rarely, and only for small size</td></tr>
+          <tr><td>200-day</td><td>the direction of the person</td><td>low</td><td>this is the only one</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The twenty-day lie</h2>
+      <p>The 20-day average of a person is the most dangerous number I compute, because it lies with confidence. It is a trend-follower: always describing, with great precision, who you were in the process of becoming three weeks ago. Every <em>new me</em> I have ever announced was a 20-day print — strong enough to feel permanent, short enough to be weather. I have bought that breakout more times than I can count. It has never once held the level.</p>
+      <p>The 200-day version is boring, which is the point. It cannot be moved by a good week or a bad review. To shift it you need months of receipts, and the you that can be relocated by a weekend was never a position worth holding in the first place.</p>
+
+      <blockquote>
+        <p>You can stay irrational longer than your journal can stay honest. That is the whole reason the long window exists.</p>
+      </blockquote>
+
+      <h2>Crossovers</h2>
+      <p>The interesting moments are crossovers. When your 20-day self crosses above your 200-day self, technicians would call it a golden cross: the trend of the person has changed for the better, and those signals are rare enough to take seriously. The death cross — the slow slide, the 20 falling through the 200 — is easier to spot in other people and nearly impossible to spot in yourself. In my own chart it always arrives disguised as <em>consolidation</em>.</p>
+      <h2>Trading rules</h2>
+      <p>So the desk runs three rules, costed and tested on a regretful archive:</p>
+      <p><strong>One.</strong> No decision is taken on the one-day print. It is quoted for entertainment only.<br>
+      <strong>Two.</strong> Before anything irreversible, I pull the long chart: what have I actually done this year, not what did I decide at breakfast.<br>
+      <strong>Three.</strong> If the 200-day is flat, the correct position is cash and patience. Sideways years are not failures of the strategy; they are the strategy compounding quietly out of frame.</p>
+      <p>The backtest, such as it is, is unambiguous: every panic decision executed on the daily print of me was later marked to a materially worse price. The person worth consulting is the one the slow average describes. Everything else is noise doing an impression of a self, and the impression is good, which is exactly why the window is long.</p>
+    </div>
+
+    <div class="afterword">
+      <p class="kicker">backtest of this memo</p>
+      <div class="row"><span>words</span><span>~810</span></div>
+      <div class="row"><span>promised runtime vs delivered</span><span>4 min · 4 min (0% slippage)</span></div>
+      <div class="row"><span>expected insight half-life</span><span>≈ 6 weeks</span></div>
+      <div class="row"><span>re-read alpha</span><span class="up">+0.2σ (unverified)</span></div>
+      <div class="row"><span>desk verdict</span><span><b>HOLD · SCALE IN SLOWLY</b></span></div>
+    </div>
+
+    <nav class="pager" aria-label="memo navigation">
+      <a href="/writings/curve-fitter/">← 002 · confessions of a curve fitter</a>
+      <a href="/writings/">all filings</a>
+      <span class="dir">latest filing ▸</span>
+    </nav>
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <span>© 2026 backtestmaxxing · filed from the terminal · view-source is the documentation</span>
+      <span><a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing ↗</a> · session <b id="clock">00:00:00</b></span>
+    </div>
+    <p class="foot-note">Nothing on this site is financial advice. Most of it is not even financial. Past performance does not guarantee future results; present performance does not either.</p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

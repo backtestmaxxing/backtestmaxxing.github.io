@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="terminal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>№ 001 · position sizing for irreversible decisions — backtestmaxxing</title>
+<meta name="description" content="Full Kelly is for people who get to run the tape twice. A memo about sizing the decisions you cannot undo.">
+<meta name="theme-color" content="#0b0f0d">
+<meta property="og:title" content="Position Sizing for Irreversible Decisions">
+<meta property="og:description" content="Full Kelly is for people who get to run the tape twice.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://backtestmaxxing.github.io/writings/position-sizing/">
+<link rel="canonical" href="https://backtestmaxxing.github.io/writings/position-sizing/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0f0d'/%3E%3Cpath d='M7 22 L14 14 L18 18 L25 9' fill='none' stroke='%2357d98c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='9' r='2.6' fill='%23f2b544'/%3E%3C/svg%3E">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("bm-theme");
+    if (t !== "print" && t !== "terminal") t = "terminal";
+    document.documentElement.dataset.theme = t;
+  } catch (e) { document.documentElement.dataset.theme = "terminal"; }
+})();
+</script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="set">
+      <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
+      <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
+      <span>SHARPE (SLEEP) <b>0.31</b> <b class="down">−0.02</b></span>
+      <span>IDEAS REJECTED <b>1,204</b> <b class="up">+7</b></span>
+      <span>MAX DD 2022 <b class="down">−38.0%</b> <b class="up">RECOVERED</b></span>
+      <span>COFFEE/BTC <b>0.000021</b> FLAT</span>
+      <span>OVERFIT RISK <b class="down">ELEVATED</b></span>
+      <span>SAMPLE SIZE <b>n=1</b></span>
+      <span>α, ADJUSTED <b class="up">0.00***</b></span>
+      <span>CURVES FIT <b>601</b> · UNFIT <b>3</b></span>
+      <span>NEXT ENTRY <b>UNKNOWN</b></span>
+    </span><span class="set">
+      <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
+      <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
+      <span>SHARPE (SLEEP) <b>0.31</b> <b class="down">−0.02</b></span>
+      <span>IDEAS REJECTED <b>1,204</b> <b class="up">+7</b></span>
+      <span>MAX DD 2022 <b class="down">−38.0%</b> <b class="up">RECOVERED</b></span>
+      <span>COFFEE/BTC <b>0.000021</b> FLAT</span>
+      <span>OVERFIT RISK <b class="down">ELEVATED</b></span>
+      <span>SAMPLE SIZE <b>n=1</b></span>
+      <span>α, ADJUSTED <b class="up">0.00***</b></span>
+      <span>CURVES FIT <b>601</b> · UNFIT <b>3</b></span>
+      <span>NEXT ENTRY <b>UNKNOWN</b></span>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap bar">
+    <a class="brand" href="/">backtestmaxxing<span class="cursor" aria-hidden="true"></span></a>
+    <nav class="nav" aria-label="site">
+      <a href="/writings/" aria-current="page">WRITINGS</a>
+      <a href="/projects/">PROJECTS</a>
+      <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
+    </nav>
+    <button class="toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="switch theme" title="switch theme">
+      <span class="dot" aria-hidden="true"></span><span class="lbl">mode: terminal</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article class="memo-head">
+    <p class="kicker">filing № 001 · research memo</p>
+    <h1>Position Sizing for Irreversible Decisions</h1>
+    <div class="memo-meta">
+      <span>FILED <b>2026-06-21</b></span>
+      <span>REV <b>1d90b4</b></span>
+      <span>CONFIDENCE <b>DRAFT</b></span>
+      <span>RUNTIME <b>5 MIN</b></span>
+      <span>STATUS <b class="up">PUBLISHED</b></span>
+    </div>
+
+    <div class="prose article">
+      <p class="drop">The Kelly criterion says the optimal fraction of your bankroll to bet is edge over odds, and it is right in exactly one world: the world where you get to run the tape an infinite number of times. Full Kelly maximizes long-run growth and, as a free bonus, maximizes the probability that you personally will tap out on the way there. The drawdowns are savage. Half Kelly gives up a quarter of the growth for half the pain, and it is the best trade available in finance: the discount is bought with nothing but restraint.</p>
+      <p>Now look at the decisions that actually matter — the move, the resignation, the thing said out loud that cannot be unsaid. These are not Kelly bets at all, because there is no rebalancing. You cannot dollar-cost-average into quitting. There is one print, no roll, no next month, and the tape does not run twice. Size them like the instrument they are: a one-lot in an illiquid market where you are also the market.</p>
+
+      <h2>The real asset class is reversibility</h2>
+      <p>Before sizing any decision, the desk now files it on two axes: how good is my information, and can the position be closed. Almost everything people agonize over is astonishingly reversible — emails, side projects, haircuts, most announcements. The agony is mispriced. The genuinely irreversible list is short and boring: health, the people you keep, the words you refuse to walk back, time. Reversible decisions deserve speed and small ceremony. Irreversible ones deserve the slow average, a second opinion, and a margin of safety measured in years.</p>
+      <blockquote>
+        <p>Conviction is leverage. Leverage has margin calls, and the margin call for conviction arrives at three in the morning wearing your own voice.</p>
+      </blockquote>
+      <h2>Rules of the desk</h2>
+      <p><strong>One.</strong> Never full-Kelly anything you cannot undo. Half-size the irreversible, always, even when — especially when — you are sure.</p>
+      <p><strong>Two.</strong> The unused margin is the position. Money not bet, bridges not burned, exits kept open: these are not cowardice, they are the liquidity that lets the rest of the book compound.</p>
+      <p><strong>Three.</strong> When two irreversible choices both look full-Kelly, the trade is usually to do neither and wait for better data. Flat is a position. Flat is frequently the best position.</p>
+      <h2>Backtest</h2>
+      <p>Run over the full archive of my own worst nights: every disaster traces to a full-size entry into an irreversible instrument, executed on a one-day print (see filing № 003), on conviction borrowed from a story (see filing № 002). The sample is one life long, the result is monotonic, and the strategy — bet like you will be wrong and survive — has never once blown up. The objective was never to win the most. It was to still be at the table, in reasonable health, when the fat pitch finally arrives.</p>
+    </div>
+
+    <div class="afterword">
+      <p class="kicker">backtest of this memo</p>
+      <div class="row"><span>words</span><span>~760</span></div>
+      <div class="row"><span>kelly fraction used</span><span>0.5 · regret-adjusted</span></div>
+      <div class="row"><span>expected insight half-life</span><span>≈ 12 weeks</span></div>
+      <div class="row"><span>re-read alpha</span><span class="up">+0.3σ (unverified)</span></div>
+      <div class="row"><span>desk verdict</span><span><b>DRAFT · POSITION OPEN</b></span></div>
+    </div>
+
+    <nav class="pager" aria-label="memo navigation">
+      <span>first filing ▸</span>
+      <a href="/writings/">all filings</a>
+      <a href="/writings/curve-fitter/">002 · confessions of a curve fitter →</a>
+    </nav>
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <span>© 2026 backtestmaxxing · filed from the terminal · view-source is the documentation</span>
+      <span><a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing ↗</a> · session <b id="clock">00:00:00</b></span>
+    </div>
+    <p class="foot-note">Nothing on this site is financial advice. Most of it is not even financial. Past performance does not guarantee future results; present performance does not either.</p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

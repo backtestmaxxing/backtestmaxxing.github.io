@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="terminal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>projects — backtestmaxxing</title>
+<meta name="description" content="The book: open strategies and closed positions from the backtestmaxxing desk, listed in order of embarrassment, ascending.">
+<meta name="theme-color" content="#0b0f0d">
+<meta property="og:title" content="projects — backtestmaxxing">
+<meta property="og:description" content="Open strategies and closed positions, in order of embarrassment, ascending.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://backtestmaxxing.github.io/projects/">
+<link rel="canonical" href="https://backtestmaxxing.github.io/projects/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0f0d'/%3E%3Cpath d='M7 22 L14 14 L18 18 L25 9' fill='none' stroke='%2357d98c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='9' r='2.6' fill='%23f2b544'/%3E%3C/svg%3E">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("bm-theme");
+    if (t !== "print" && t !== "terminal") t = "terminal";
+    document.documentElement.dataset.theme = t;
+  } catch (e) { document.documentElement.dataset.theme = "terminal"; }
+})();
+</script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="set">
+      <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
+      <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
+      <span>SHARPE (SLEEP) <b>0.31</b> <b class="down">−0.02</b></span>
+      <span>IDEAS REJECTED <b>1,204</b> <b class="up">+7</b></span>
+      <span>MAX DD 2022 <b class="down">−38.0%</b> <b class="up">RECOVERED</b></span>
+      <span>COFFEE/BTC <b>0.000021</b> FLAT</span>
+      <span>OVERFIT RISK <b class="down">ELEVATED</b></span>
+      <span>SAMPLE SIZE <b>n=1</b></span>
+      <span>α, ADJUSTED <b class="up">0.00***</b></span>
+      <span>CURVES FIT <b>601</b> · UNFIT <b>3</b></span>
+      <span>NEXT ENTRY <b>UNKNOWN</b></span>
+    </span><span class="set">
+      <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
+      <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
+      <span>SHARPE (SLEEP) <b>0.31</b> <b class="down">−0.02</b></span>
+      <span>IDEAS REJECTED <b>1,204</b> <b class="up">+7</b></span>
+      <span>MAX DD 2022 <b class="down">−38.0%</b> <b class="up">RECOVERED</b></span>
+      <span>COFFEE/BTC <b>0.000021</b> FLAT</span>
+      <span>OVERFIT RISK <b class="down">ELEVATED</b></span>
+      <span>SAMPLE SIZE <b>n=1</b></span>
+      <span>α, ADJUSTED <b class="up">0.00***</b></span>
+      <span>CURVES FIT <b>601</b> · UNFIT <b>3</b></span>
+      <span>NEXT ENTRY <b>UNKNOWN</b></span>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap bar">
+    <a class="brand" href="/">backtestmaxxing<span class="cursor" aria-hidden="true"></span></a>
+    <nav class="nav" aria-label="site">
+      <a href="/writings/">WRITINGS</a>
+      <a href="/projects/" aria-current="page">PROJECTS</a>
+      <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
+    </nav>
+    <button class="toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="switch theme" title="switch theme">
+      <span class="dot" aria-hidden="true"></span><span class="lbl">mode: terminal</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="memo-head">
+    <p class="kicker">the book · open strategies and closed positions</p>
+    <h1>Projects</h1>
+    <div class="memo-meta">
+      <span>OPEN <b class="up">2</b></span>
+      <span>PAPER <b>1</b></span>
+      <span>CLOSED <b class="down">1</b></span>
+      <span>IMMORTAL <b>1</b></span>
+    </div>
+    <div class="prose article">
+      <p>Everything the desk is running, has run, or refuses to run — listed in order of embarrassment, ascending. Source stays private while the opinions stay free; when a strategy survives a year out of sample, it graduates to a <a href="/writings/">memo</a>.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-head">
+          <h2>moonshot.mq4</h2>
+          <span class="chip dead">closed · margin call</span>
+        </div>
+        <div class="card-body">
+          <p>An expert advisor that traded lunar phases. Full moon: risk-on. New moon: flat. The moon turned out not to be a leading indicator of anything except tides. Blown up on a waxing crescent — which was, in hindsight, the system's single most accurate signal.</p>
+          <div class="metrics">
+            <span>SHARPE <b class="down">−1.8</b></span>
+            <span>MAX DD <b class="down">−100%</b></span>
+            <span>REGRET <b>compounding</b></span>
+          </div>
+          <figure class="spark">
+            <svg viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polyline points="0,18 15,14 30,20 45,10 60,16 75,26 90,32 105,34 120,35"
+                fill="none" stroke="var(--loss)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="120" cy="35" r="2.5" fill="var(--loss)"/>
+            </svg>
+            <figcaption>nav, final 14 months</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>kernel-of-truth</h2>
+          <span class="chip warm">backtest · week 34</span>
+        </div>
+        <div class="card-body">
+          <p>A sentiment model that reads earnings-call transcripts and scores how much of each sentence is load-bearing. Works beautifully, except on Tuesdays, quarter-ends, and any call where the executive has been media-trained. Currently being interrogated on data it has never met, per <a href="/writings/curve-fitter/">filing № 002</a>. It is allowed two parameters and it knows why.</p>
+          <div class="metrics">
+            <span>SHARPE, OOS <b class="up">1.1</b></span>
+            <span>PARAMS <b>2</b></span>
+            <span>MOONS <b>0</b></span>
+          </div>
+          <figure class="spark">
+            <svg viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polyline points="0,28 12,24 24,26 36,18 48,22 60,14 72,18 84,10 96,13 108,7 120,9"
+                fill="none" stroke="var(--gain)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="120" cy="9" r="2.5" fill="var(--gain)"/>
+            </svg>
+            <figcaption>walk-forward equity</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>the-invariant-portfolio</h2>
+          <span class="chip">paper · do not touch</span>
+        </div>
+        <div class="card-body">
+          <p>Five positions, rebalanced when the vibes stabilize, which is rarely. The strategy is the refusal to touch it — every urge to trade is logged, stamped, and filed under <em>cost of doing business</em>. Expected to be boring for thirty years, at which point it becomes the most interesting thing on the desk.</p>
+          <div class="metrics">
+            <span>SHARPE <b class="up">0.9</b></span>
+            <span>VOL <b>low</b></span>
+            <span>TRADES <b>2 / yr</b></span>
+          </div>
+          <figure class="spark">
+            <svg viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polyline points="0,30 20,28 40,29 60,26 80,26 100,23 120,22"
+                fill="none" stroke="var(--gain)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="120" cy="22" r="2.5" fill="var(--gain)"/>
+            </svg>
+            <figcaption>boredom, compounding</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>this-website</h2>
+          <span class="chip live">live · immortal</span>
+        </div>
+        <div class="card-body">
+          <p>Static HTML, one stylesheet, two typefaces, no build step, no dependencies, no analytics. The only system on this desk that has never blown up, and the only one whose complexity compounds downward. You are looking at the complete documentation; the source is the product.</p>
+          <div class="metrics">
+            <span>DEPENDENCIES <b class="up">0</b></span>
+            <span>DRAWDOWN <b class="up">0.0%</b></span>
+            <span>DOC <b>view-source</b></span>
+          </div>
+          <figure class="spark">
+            <svg viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <polyline points="0,26 120,26"
+                fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="120" cy="26" r="2.5" fill="var(--accent)"/>
+            </svg>
+            <figcaption>nav since launch · flat on purpose</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <span>© 2026 backtestmaxxing · filed from the terminal · view-source is the documentation</span>
+      <span><a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing ↗</a> · session <b id="clock">00:00:00</b></span>
+    </div>
+    <p class="foot-note">Nothing on this site is financial advice. Most of it is not even financial. Past performance does not guarantee future results; present performance does not either.</p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
