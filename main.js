@@ -1,4 +1,4 @@
-/* backtestmaxxing — the moving parts: the edition switch, the ⌘K index and the clock. */
+/* backtestmaxxing — the moving parts: the edition switch, the ⌘K index, the clock and the latency print. */
 (function () {
   var root = document.documentElement;
   var btn = document.getElementById("themeToggle");
@@ -9,7 +9,7 @@
     root.dataset.theme = theme;
     if (btn) btn.setAttribute("aria-pressed", theme === "night" ? "true" : "false");
     if (lbl) lbl.textContent = theme === "night" ? "night edition" : "day edition";
-    if (meta) meta.setAttribute("content", theme === "night" ? "#0e0d0c" : "#ff4a2e");
+    if (meta) meta.setAttribute("content", theme === "night" ? "#34322d" : "#f1efe9");
   }
 
   function flip() {
@@ -18,13 +18,13 @@
     paint(next);
   }
 
-  paint(root.dataset.theme === "night" ? "night" : "paper");
+  paint(root.dataset.theme === "paper" ? "paper" : "night");
   if (btn) btn.addEventListener("click", flip);
 
   var here = location.pathname.replace(/index\.html$/, "");
-  document.querySelectorAll(".mast-nav > a").forEach(function (a) {
+  document.querySelectorAll(".nav > a").forEach(function (a) {
     var href = a.getAttribute("href");
-    if (href !== "/" && here.indexOf(href) === 0) a.setAttribute("aria-current", "page");
+    if (href === "/" ? here === "/" : here.indexOf(href) === 0) a.setAttribute("aria-current", "page");
   });
 
   /* ⌘K index: filter the list, arrows to move, enter to open. */
@@ -90,4 +90,13 @@
     tick();
     setInterval(tick, 1000);
   }
+
+  /* Time from navigation start to the load event, printed wherever the page shows a .lat cell. */
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+      var ms = nav && nav.loadEventStart > 0 ? nav.loadEventStart : performance.now();
+      document.querySelectorAll(".lat").forEach(function (el) { el.textContent = Math.round(ms) + " ms"; });
+    }, 0);
+  });
 })();

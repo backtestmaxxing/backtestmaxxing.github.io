@@ -1,8 +1,7 @@
 # backtestmaxxing.github.io
 
-A tear sheet you can read. Static HTML, one stylesheet, three self-hosted
-typefaces, no build step, no dependencies, no tracking. Pushing to `main`
-publishes.
+A quant's notebook. Static HTML, one stylesheet, two typefaces, no build
+step, no dependencies, no tracking. Pushing to `main` publishes.
 
 ## Layout
 
@@ -17,14 +16,16 @@ style.css  main.js  fonts/ everything else
 
 ## Design
 
-- Main inspiration: https://www.jasonpontin.com/, found on minimal.gallery
-  (blog tag).
-- Typefaces: Schibsted Grotesk (headlines, UI) and Libre Caslon Text (body)
-  from Google Fonts, Necto Mono (figures) from Collletttivo. All SIL Open Font
-  License; the licences are in `fonts/`.
-- Theme: a vermilion block with the name cropped at the fold, an off-white
-  page, black ink, a red dot as the page marker and a halftone equity curve.
-  The edition button (or `t`) switches to a night edition. `⌘K` or `/` opens
-  the index. The footer crop follows footer.design/sites/decimals and the 404
-  status board follows 404s.design/sites/pensatori-irrazionali.
-- Colors carry meaning: green gains, vermilion losses, links and markers.
+- Main inspiration: https://www.atalanta.tech/, found on minimal.gallery
+  (software tag).
+- Typefaces: Switzer (Indian Type Foundry) loaded from Fontshare's CDN,
+  api.fontshare.com, never copied into the repo; IBM Plex Mono (figures,
+  labels) from Google Fonts, SIL Open Font License, self-hosted in `fonts/`
+  with its licence.
+- Theme: warm charcoal by default, a left rail split off by one full-height
+  hairline, memo metadata and page latency as tabular figures in the rail, a
+  light two-tone sentence instead of a headline, "/" navigation with a square
+  marker, memos as an order book with depth bars, a quiet tape under the top
+  bar. The edition button (or `t`) switches to a paper edition. `⌘K` or `/`
+  opens the index.
+- Colours carry meaning only: muted green for gains, muted coral for losses.

@@ -1,33 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="paper">
+<html lang="en" data-theme="night">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>writings — backtestmaxxing</title>
 <meta name="description" content="Research memos filed by the backtestmaxxing desk. Each one tested on a past version of the author.">
-<meta name="theme-color" content="#ff4a2e">
+<meta name="theme-color" content="#34322d">
 <meta property="og:title" content="writings — backtestmaxxing">
 <meta property="og:description" content="Research memos. Each one tested on a past version of the author.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://backtestmaxxing.github.io/writings/">
 <link rel="canonical" href="https://backtestmaxxing.github.io/writings/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff4a2e'/%3E%3Cpath d='M5 32 V12 h7 a6 6 0 0 1 0 12 h-7' fill='none' stroke='%230b0b0a' stroke-width='4'/%3E%3Ccircle cx='25' cy='9' r='3.5' fill='%23ecebe6'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2334322d'/%3E%3Cpath d='M6 24 L12 18 L16 21 L26 9' fill='none' stroke='%23f2f0ea' stroke-width='2.5'/%3E%3Crect x='23' y='6' width='6' height='6' fill='%23f2f0ea'/%3E%3C/svg%3E">
 <script>
 (function () {
-  var t = "paper";
-  try { if (localStorage.getItem("bm-theme") === "night") t = "night"; } catch (e) {}
+  var t = "night";
+  try { if (localStorage.getItem("bm-theme") === "paper") t = "paper"; } catch (e) {}
   document.documentElement.dataset.theme = t;
 })();
 </script>
-<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/libre-caslon-text.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,401&amp;display=swap">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <a class="skip" href="#main">skip to content</a>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
+
+<header class="top">
+  <a class="mark" href="/"><span class="sq" aria-hidden="true"></span>backtestmaxxing</a>
+  <nav class="nav" aria-label="site">
+    <a href="/">Front</a>
+    <a href="/writings/">Writings</a>
+    <a href="/projects/">Projects</a>
+    <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
+  </nav>
+  <div class="cells">
+    <button class="cell" id="cmdkOpen" type="button" aria-haspopup="dialog" aria-label="open the index (⌘K)">Index <kbd>⌘K</kbd></button>
+    <button class="cell toggle" id="themeToggle" type="button" aria-pressed="true" aria-label="switch edition" title="switch edition"><span class="dot" aria-hidden="true"></span><span class="lbl">night edition</span></button>
+  </div>
+</header>
+
+<div class="tape" aria-hidden="true">
+  <div class="tape-track">
     <span class="set">
       <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
       <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
@@ -56,57 +72,51 @@
   </div>
 </div>
 
-<header class="masthead">
-  <div class="wrap mast-bar">
-    <a class="brand" href="/">backtestmaxxing</a>
-    <nav class="mast-nav" aria-label="site">
-      <a href="/writings/">Writings</a>
-      <a href="/projects/">Projects</a>
-      <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
-      <button class="kbd" id="cmdkOpen" type="button" aria-haspopup="dialog" aria-label="open the index (⌘K)"><span>Index</span> <kbd>⌘K</kbd></button>
-      <button class="toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="switch edition" title="switch edition">
-        <span class="dot" aria-hidden="true"></span><span class="lbl">day edition</span>
-      </button>
-    </nav>
-  </div>
-  <p class="mast-word" aria-hidden="true"><span>backtestmaxxing</span></p>
-</header>
-
-<main id="main" class="wrap">
-  <section class="memo-head">
+<main id="main">
+  <section class="row memo">
+    <aside class="rail">
+    <div class="memo-meta">
+        <span>ENTRIES <b>3</b></span>
+        <span>WINDOW <b>2026-06 — 2026-09</b></span>
+        <span>HIT RATE <b>UNKNOWN</b></span>
+        <span>SUBSCRIPTIONS <b>0.00 /mo</b></span>
+      </div>
+    </aside>
+    <div class="body">
     <p class="kicker">research memos · the trade log</p>
     <h1>Writings</h1>
-    <div class="memo-meta">
-      <span>ENTRIES <b>3</b></span>
-      <span>WINDOW <b>2026-06 — 2026-09</b></span>
-      <span>HIT RATE <b>UNKNOWN</b></span>
-      <span>SUBSCRIPTIONS <b>0.00 /mo</b></span>
-    </div>
     <div class="prose article">
       <p>Each memo takes a decision, an idea, or a habit, reconstructs the information available at the time, and asks whether it was any good. Written to be read in one sitting. No schedule, no doomscroll, no algorithm — <code>view-source</code> if you don't trust the rendering.</p>
     </div>
-  </section>
-
-  <section class="sect">
-    <div class="filings">
-      <a class="filing" href="/writings/moving-average/">
-        <span class="f-no">№ 003 · 2026-09-12</span>
-        <span class="f-title">The 200-Day Moving Average of a Person</span>
-        <span class="chip">speculative</span>
-        <span class="f-sub">You are a noisy series. The day-to-day print is mostly bid-ask spread.</span>
-      </a>
-      <a class="filing" href="/writings/curve-fitter/">
-        <span class="f-no">№ 002 · 2026-08-03</span>
-        <span class="f-title">Confessions of a Curve Fitter</span>
-        <span class="chip warm">high (in-sample)</span>
-        <span class="f-sub">Give me enough parameters and I will show you a beautiful past.</span>
-      </a>
-      <a class="filing" href="/writings/position-sizing/">
-        <span class="f-no">№ 001 · 2026-06-21</span>
-        <span class="f-title">Position Sizing for Irreversible Decisions</span>
-        <span class="chip">draft</span>
-        <span class="f-sub">Full Kelly is for people who get to run the tape twice.</span>
-      </a>
+    <table class="book">
+      <caption class="sr">Filings, newest first</caption>
+      <thead>
+        <tr><th class="num">no.</th><th class="t-date">filed</th><th>memo</th><th class="t-conf">confidence</th><th class="num t-size">size</th></tr>
+      </thead>
+      <tbody>
+      <tr style="--size:0.500">
+        <td class="num">003</td>
+        <td class="num t-date">2026-09-12</td>
+        <td class="t-memo"><a href="/writings/moving-average/">The 200-Day Moving Average of a Person</a><span class="t-sub">You are a noisy series. The day-to-day print is mostly bid-ask spread.</span></td>
+        <td class="t-conf"><span>speculative</span></td>
+        <td class="num t-size">4&nbsp;min</td>
+      </tr>
+      <tr style="--size:0.875">
+        <td class="num">002</td>
+        <td class="num t-date">2026-08-03</td>
+        <td class="t-memo"><a href="/writings/curve-fitter/">Confessions of a Curve Fitter</a><span class="t-sub">Give me enough parameters and I will show you a beautiful past.</span></td>
+        <td class="t-conf"><span class="down">high (in-sample)</span></td>
+        <td class="num t-size">7&nbsp;min</td>
+      </tr>
+      <tr style="--size:0.625">
+        <td class="num">001</td>
+        <td class="num t-date">2026-06-21</td>
+        <td class="t-memo"><a href="/writings/position-sizing/">Position Sizing for Irreversible Decisions</a><span class="t-sub">Full Kelly is for people who get to run the tape twice.</span></td>
+        <td class="t-conf"><span>draft</span></td>
+        <td class="num t-size">5&nbsp;min</td>
+      </tr>
+      </tbody>
+    </table>
     </div>
   </section>
 </main>
@@ -130,10 +140,11 @@
         <p class="foot-h">elsewhere</p>
         <a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing ↗</a>
         <span>session <b id="clock">00:00:00</b></span>
+        <span>page latency <b class="lat">—</b></span>
       </div>
       <div>
         <p class="foot-h">colophon</p>
-        <span>Schibsted Grotesk · Libre Caslon Text · Necto Mono by Collletttivo</span>
+        <span>Switzer by Indian Type Foundry · IBM Plex Mono by IBM</span>
       </div>
     </div>
     <div class="foot-grid">
@@ -141,7 +152,6 @@
     </div>
     <p class="foot-note">Nothing on this site is financial advice. Most of it is not even financial. Past performance does not guarantee future results; present performance does not either.</p>
   </div>
-  <p class="foot-mark" aria-hidden="true">backtestmaxxing</p>
 </footer>
 
 <dialog class="cmdk" id="cmdk" aria-label="site index">

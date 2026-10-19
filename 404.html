@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="paper">
+<html lang="en" data-theme="night">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>position closed — backtestmaxxing</title>
 <meta name="description" content="404: the page you requested was never in the sample.">
-<meta name="theme-color" content="#ff4a2e">
+<meta name="theme-color" content="#34322d">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff4a2e'/%3E%3Cpath d='M5 32 V12 h7 a6 6 0 0 1 0 12 h-7' fill='none' stroke='%230b0b0a' stroke-width='4'/%3E%3Ccircle cx='25' cy='9' r='3.5' fill='%23ecebe6'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2334322d'/%3E%3Cpath d='M6 24 L12 18 L16 21 L26 9' fill='none' stroke='%23f2f0ea' stroke-width='2.5'/%3E%3Crect x='23' y='6' width='6' height='6' fill='%23f2f0ea'/%3E%3C/svg%3E">
 <script>
 (function () {
-  var t = "paper";
-  try { if (localStorage.getItem("bm-theme") === "night") t = "night"; } catch (e) {}
+  var t = "night";
+  try { if (localStorage.getItem("bm-theme") === "paper") t = "paper"; } catch (e) {}
   document.documentElement.dataset.theme = t;
 })();
 </script>
-<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/libre-caslon-text.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,401&amp;display=swap">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <a class="skip" href="#main">skip to content</a>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
+
+<header class="top">
+  <a class="mark" href="/"><span class="sq" aria-hidden="true"></span>backtestmaxxing</a>
+  <nav class="nav" aria-label="site">
+    <a href="/">Front</a>
+    <a href="/writings/">Writings</a>
+    <a href="/projects/">Projects</a>
+    <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
+  </nav>
+  <div class="cells">
+    <button class="cell" id="cmdkOpen" type="button" aria-haspopup="dialog" aria-label="open the index (⌘K)">Index <kbd>⌘K</kbd></button>
+    <button class="cell toggle" id="themeToggle" type="button" aria-pressed="true" aria-label="switch edition" title="switch edition"><span class="dot" aria-hidden="true"></span><span class="lbl">night edition</span></button>
+  </div>
+</header>
+
+<div class="tape" aria-hidden="true">
+  <div class="tape-track">
     <span class="set">
       <span>BMAXX <b>104.20</b> <b class="up">+2.41%</b></span>
       <span>HINDSIGHT FUTURES <b class="up">LIMIT UP</b></span>
@@ -52,24 +68,16 @@
   </div>
 </div>
 
-<header class="masthead">
-  <div class="wrap mast-bar">
-    <a class="brand" href="/">backtestmaxxing</a>
-    <nav class="mast-nav" aria-label="site">
-      <a href="/writings/">Writings</a>
-      <a href="/projects/">Projects</a>
-      <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
-      <button class="kbd" id="cmdkOpen" type="button" aria-haspopup="dialog" aria-label="open the index (⌘K)"><span>Index</span> <kbd>⌘K</kbd></button>
-      <button class="toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="switch edition" title="switch edition">
-        <span class="dot" aria-hidden="true"></span><span class="lbl">day edition</span>
-      </button>
-    </nav>
-  </div>
-  <p class="mast-word" aria-hidden="true"><span>backtestmaxxing</span></p>
-</header>
-
-<main id="main" class="wrap">
-  <section class="lost">
+<main id="main">
+  <section class="row lost">
+    <aside class="rail">
+      <dl class="kv">
+        <div><dt>status</dt><dd class="down">404</dd></div>
+        <div><dt>fill</dt><dd>none</dd></div>
+        <div><dt>page latency</dt><dd class="lat">—</dd></div>
+      </dl>
+    </aside>
+    <div class="body">
     <p class="big">404</p>
     <p class="why">err: position closed · page not found</p>
     <p class="why">The page you requested was never in the sample —<br>closed, never opened, or it exists only in a better backtest.</p>
@@ -91,6 +99,7 @@
     </div>
     <a class="back" href="/">RETURN TO THE FRONT PAGE</a>
     <p class="why">this page is static, like all my regrets</p>
+    </div>
   </section>
 </main>
 
@@ -113,10 +122,11 @@
         <p class="foot-h">elsewhere</p>
         <a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing ↗</a>
         <span>session <b id="clock">00:00:00</b></span>
+        <span>page latency <b class="lat">—</b></span>
       </div>
       <div>
         <p class="foot-h">colophon</p>
-        <span>Schibsted Grotesk · Libre Caslon Text · Necto Mono by Collletttivo</span>
+        <span>Switzer by Indian Type Foundry · IBM Plex Mono by IBM</span>
       </div>
     </div>
     <div class="foot-grid">
@@ -124,7 +134,6 @@
     </div>
     <p class="foot-note">Nothing on this site is financial advice. Most of it is not even financial. Past performance does not guarantee future results; present performance does not either.</p>
   </div>
-  <p class="foot-mark" aria-hidden="true">backtestmaxxing</p>
 </footer>
 
 <dialog class="cmdk" id="cmdk" aria-label="site index">
