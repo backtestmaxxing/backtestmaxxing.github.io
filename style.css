@@ -131,7 +131,7 @@ b, strong { font-weight: 700; }
 .mast-mid { font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); }
 .brand {
   display: block;
-  padding: 10px 0 6px;
+  padding: 10px 0 0.16em;
   font-family: var(--heavy);
   font-weight: 900;
   font-size: clamp(32px, 7vw, 86px);
@@ -140,7 +140,7 @@ b, strong { font-weight: 700; }
   text-align: center;
   text-decoration: none;
 }
-.masthead.front .brand { font-size: min(9.6vw, 138px); padding: 16px 0 4px; letter-spacing: -0.02em; }
+.masthead.front .brand { font-size: min(9.6vw, 138px); padding: 16px 0 0.16em; letter-spacing: -0.02em; }
 .mast-nav {
   position: relative;
   display: flex;
