@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="terminal">
+<html lang="en" data-theme="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>№ 001 · position sizing for irreversible decisions — backtestmaxxing</title>
 <meta name="description" content="Full Kelly is for people who get to run the tape twice. A memo about sizing the decisions you cannot undo.">
-<meta name="theme-color" content="#0b0f0d">
+<meta name="theme-color" content="#f6dcc6">
 <meta property="og:title" content="Position Sizing for Irreversible Decisions">
 <meta property="og:description" content="Full Kelly is for people who get to run the tape twice.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://backtestmaxxing.github.io/writings/position-sizing/">
 <link rel="canonical" href="https://backtestmaxxing.github.io/writings/position-sizing/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0f0d'/%3E%3Cpath d='M7 22 L14 14 L18 18 L25 9' fill='none' stroke='%2357d98c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='25' cy='9' r='2.6' fill='%23f2b544'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%23f6dcc6'/%3E%3Cpath d='M6 23 L13 15 L18 19 L26 8' fill='none' stroke='%231c1410' stroke-width='3.2' stroke-linecap='square'/%3E%3Ccircle cx='26' cy='8' r='2.8' fill='%23b4261c'/%3E%3C/svg%3E">
 <script>
 (function () {
-  try {
-    var t = localStorage.getItem("bm-theme");
-    if (t !== "print" && t !== "terminal") t = "terminal";
-    document.documentElement.dataset.theme = t;
-  } catch (e) { document.documentElement.dataset.theme = "terminal"; }
+  var t = "paper";
+  try { if (localStorage.getItem("bm-theme") === "night") t = "night"; } catch (e) {}
+  document.documentElement.dataset.theme = t;
 })();
 </script>
+<link rel="preload" href="/fonts/sprat-condensed-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/libre-caslon-text.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -57,16 +57,23 @@
 </div>
 
 <header class="masthead">
-  <div class="wrap bar">
-    <a class="brand" href="/">backtestmaxxing<span class="cursor" aria-hidden="true"></span></a>
-    <nav class="nav" aria-label="site">
-      <a href="/writings/" aria-current="page">WRITINGS</a>
-      <a href="/projects/">PROJECTS</a>
+  <div class="wrap">
+    <div class="mast-top">
+      <span>essays filed as memos</span>
+      <span class="mast-mid">“it worked on the data”</span>
+      <span>projects tracked as strategies</span>
+    </div>
+    <a class="brand" href="/">backtestmaxxing</a>
+    <nav class="mast-nav" aria-label="site">
+      <a href="/writings/">Writings</a>
+      <a href="/projects/">Projects</a>
       <a class="ext" href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">X&nbsp;↗</a>
+      <span class="sp"></span>
+      <button class="kbd" id="cmdkOpen" type="button" aria-haspopup="dialog" aria-label="open the index (⌘K)"><span>index</span> <kbd>⌘K</kbd></button>
+      <button class="toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="switch edition" title="switch edition">
+        <span class="dot" aria-hidden="true"></span><span class="lbl">pink edition</span>
+      </button>
     </nav>
-    <button class="toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="switch theme" title="switch theme">
-      <span class="dot" aria-hidden="true"></span><span class="lbl">mode: terminal</span>
-    </button>
   </div>
 </header>
 
@@ -118,13 +125,53 @@
 
 <footer class="site-foot">
   <div class="wrap">
+    <div class="foot-cols">
+      <div>
+        <p class="foot-h">sections</p>
+        <a href="/">Front page</a>
+        <a href="/writings/">Writings</a>
+        <a href="/projects/">Projects</a>
+      </div>
+      <div>
+        <p class="foot-h">filings</p>
+        <a href="/writings/moving-average/">№ 003 · moving average</a>
+        <a href="/writings/curve-fitter/">№ 002 · curve fitter</a>
+        <a href="/writings/position-sizing/">№ 001 · position sizing</a>
+      </div>
+      <div>
+        <p class="foot-h">elsewhere</p>
+        <a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing ↗</a>
+        <span>session <b id="clock">00:00:00</b></span>
+      </div>
+      <div>
+        <p class="foot-h">colophon</p>
+        <span>Sprat &amp; Necto Mono by Collletttivo · Libre Caslon Text · set on pink paper</span>
+      </div>
+    </div>
+    <p class="foot-mark" aria-hidden="true">backtestmaxxing</p>
     <div class="foot-grid">
       <span>© 2026 backtestmaxxing · filed from the terminal · view-source is the documentation</span>
-      <span><a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing ↗</a> · session <b id="clock">00:00:00</b></span>
     </div>
     <p class="foot-note">Nothing on this site is financial advice. Most of it is not even financial. Past performance does not guarantee future results; present performance does not either.</p>
   </div>
 </footer>
+
+<dialog class="cmdk" id="cmdk" aria-label="site index">
+  <form method="dialog" class="cmdk-box">
+    <input id="cmdkQ" type="text" placeholder="search the desk…" autocomplete="off" aria-label="search the desk">
+    <ul id="cmdkList">
+      <li><a href="/">Front page <span>the desk</span></a></li>
+      <li><a href="/writings/">Writings <span>the trade log</span></a></li>
+      <li><a href="/projects/">Projects <span>the book</span></a></li>
+      <li><a href="/writings/moving-average/">The 200-Day Moving Average of a Person <span>№ 003</span></a></li>
+      <li><a href="/writings/curve-fitter/">Confessions of a Curve Fitter <span>№ 002</span></a></li>
+      <li><a href="/writings/position-sizing/">Position Sizing for Irreversible Decisions <span>№ 001</span></a></li>
+      <li><a href="https://x.com/backtestmaxxing" target="_blank" rel="noopener noreferrer">@backtestmaxxing on X <span>↗</span></a></li>
+      <li><button type="button" data-act="theme">Switch edition <span>pink / night</span></button></li>
+    </ul>
+    <p class="cmdk-foot"><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>↵</kbd> open · <kbd>esc</kbd> close</p>
+  </form>
+</dialog>
 
 <script src="/main.js"></script>
 </body>
