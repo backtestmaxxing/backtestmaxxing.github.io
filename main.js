@@ -9,7 +9,7 @@
     root.dataset.theme = theme;
     if (btn) btn.setAttribute("aria-pressed", theme === "night" ? "true" : "false");
     if (lbl) lbl.textContent = theme === "night" ? "night edition" : "day edition";
-    if (meta) meta.setAttribute("content", theme === "night" ? "#34322d" : "#f1efe9");
+    if (meta) meta.setAttribute("content", theme === "night" ? "#1a1917" : "#f1efe9");
   }
 
   function flip() {

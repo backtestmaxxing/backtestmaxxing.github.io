@@ -17,13 +17,13 @@
 
 [data-theme="night"] {
   color-scheme: dark;
-  --bg: #34322d;
-  --bg2: #3e3c36;
-  --bg3: #46443d;
-  --ink: #f2f0ea;
-  --accent: #f2f0ea;
-  --muted: #a8a49a;
-  --dim: #858177;
+  --bg: #1a1917;
+  --bg2: #242320;
+  --bg3: #2e2d29;
+  --ink: #f5f3ee;
+  --accent: #f5f3ee;
+  --muted: #bdb9ae;
+  --dim: #a09c91;
   --hair: rgba(242, 240, 234, 0.14);
   --hair2: rgba(242, 240, 234, 0.28);
   --gain: #93cfa6;
@@ -38,12 +38,12 @@
   --bg3: #dcd8ce;
   --ink: #23221f;
   --accent: #23221f;
-  --muted: #6b675f;
-  --dim: #8a867c;
+  --muted: #58544c;
+  --dim: #665f56;
   --hair: rgba(35, 34, 31, 0.14);
   --hair2: rgba(35, 34, 31, 0.3);
-  --gain: #2e7a4a;
-  --loss: #b2452f;
+  --gain: #25683f;
+  --loss: #a23c27;
   --grid: rgba(35, 34, 31, 0.08);
   --depth: rgba(35, 34, 31, 0.035);
 }
