@@ -8,8 +8,8 @@
   function paint(theme) {
     root.dataset.theme = theme;
     if (btn) btn.setAttribute("aria-pressed", theme === "night" ? "true" : "false");
-    if (lbl) lbl.textContent = theme === "night" ? "night edition" : "pink edition";
-    if (meta) meta.setAttribute("content", theme === "night" ? "#16110e" : "#f6dcc6");
+    if (lbl) lbl.textContent = theme === "night" ? "night edition" : "day edition";
+    if (meta) meta.setAttribute("content", theme === "night" ? "#0e0d0c" : "#ff4a2e");
   }
 
   function flip() {
